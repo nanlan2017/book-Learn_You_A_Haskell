@@ -1,0 +1,58 @@
+name:                book-learn-you-a-haskell
+version:             0.1.0.0
+github:              "githubuser/book-learn-you-a-haskell"
+license:             BSD3
+author:              "Author name here"
+maintainer:          "example@example.com"
+copyright:           "2019 Author name here"
+
+extra-source-files:
+- README.md
+- ChangeLog.md
+
+# Metadata used when publishing your package
+# synopsis:            Short description of your package
+# category:            Web
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description:         Please see the README on GitHub at <https://github.com/githubuser/book-learn-you-a-haskell#readme>
+
+dependencies:
+- filepath
+- regex-posix
+- mtl
+- parsec
+- containers
+- base >= 4.7 && < 5
+- bytestring
+- directory
+- random
+- old-time
+- array
+
+library:
+  source-dirs: src
+
+executables:
+  book-learn-you-a-haskell-exe:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - book-learn-you-a-haskell
+
+tests:
+  book-learn-you-a-haskell-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - book-learn-you-a-haskell
